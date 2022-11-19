@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 //pages
 import Comics from "./pages/Comics";
-import Header from "./pages/Header";
+import Header from "./components/Header";
 import Characters from "./pages/Characters";
 
 function App() {

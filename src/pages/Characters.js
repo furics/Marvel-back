@@ -22,20 +22,25 @@ const Characters = () => {
   return isLoading ? (
     <p>Loading ...</p>
   ) : (
-    <div className="container">
-      {data.results.map((results, index) => {
-        return (
-          <div key={results._id} className="parsonnages-container">
-            <h2>{results.name}</h2>
-            <img
-              src={results.thumbnail.path + "." + results.thumbnail.extension}
-              alt="personnages"
-            />
-            {results.description && <p>{results.description}</p>}
-          </div>
-        );
-      })}
-    </div>
+    <>
+      <div className="container">
+        {data.results.map((results, index) => {
+          return (
+            <div key={results._id} className="parsonnages-card">
+              <h2>{results.name}</h2>
+              <img
+                src={results.thumbnail.path + "." + results.thumbnail.extension}
+                alt="personnages"
+              />
+              {results.description && <p>{results.description}</p>}
+            </div>
+          );
+        })}
+      </div>
+      <div className="search">
+        <input type="search" placeholder="Search Characters" />
+      </div>
+    </>
   );
 };
 
